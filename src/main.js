@@ -90,11 +90,11 @@ function moveCar() {
     // let the leftmost edge at 10px from the left
     const leftmost = 10;
     // let the rightmost edge be at 10px from the right
-    // rightmost edget = 10 + width of car
+    // rightmost edge = 10 + width of car
     //const rightmost = window.innerWidth - 10;
     // this is taking the rightmost according to the width
     // of the road set in the question.
-    const rightmost = road.width - car.width - 10;
+    const rightmost = Math.min((road.width - car.width - 10), (window.innerWidth - car.width - 10));
     // Check that the positions are all positive whole number
     const test_valid_pos = ((new_pos >= 0) && (leftmost >= 0)
         && (rightmost >= 0));
